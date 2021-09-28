@@ -26,6 +26,9 @@ Partial Class frmMain
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
+        Me.Button4 = New System.Windows.Forms.Button()
+        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
+        Me.fcb = New HelloWorld.FancyCheckbox()
         Me.SuspendLayout()
         '
         'btnSayHello
@@ -39,7 +42,7 @@ Partial Class frmMain
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(209, 291)
+        Me.Button1.Location = New System.Drawing.Point(121, 291)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(159, 53)
         Me.Button1.TabIndex = 1
@@ -64,11 +67,40 @@ Partial Class frmMain
         Me.Button3.Text = "Delete"
         Me.Button3.UseVisualStyleBackColor = True
         '
+        'Button4
+        '
+        Me.Button4.Location = New System.Drawing.Point(550, 83)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(75, 23)
+        Me.Button4.TabIndex = 4
+        Me.Button4.Text = "Button4"
+        Me.Button4.UseVisualStyleBackColor = True
+        '
+        'CheckBox1
+        '
+        Me.CheckBox1.AutoSize = True
+        Me.CheckBox1.Location = New System.Drawing.Point(300, 49)
+        Me.CheckBox1.Name = "CheckBox1"
+        Me.CheckBox1.Size = New System.Drawing.Size(81, 17)
+        Me.CheckBox1.TabIndex = 5
+        Me.CheckBox1.Text = "CheckBox1"
+        Me.CheckBox1.UseVisualStyleBackColor = True
+        '
+        'fcb
+        '
+        Me.fcb.Location = New System.Drawing.Point(121, 83)
+        Me.fcb.Name = "fcb"
+        Me.fcb.Size = New System.Drawing.Size(50, 32)
+        Me.fcb.TabIndex = 6
+        '
         'frmMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.fcb)
+        Me.Controls.Add(Me.CheckBox1)
+        Me.Controls.Add(Me.Button4)
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)
@@ -76,6 +108,7 @@ Partial Class frmMain
         Me.Name = "frmMain"
         Me.Text = "Hello World"
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
@@ -83,4 +116,7 @@ Partial Class frmMain
     Friend WithEvents Button1 As Button
     Friend WithEvents Button2 As Button
     Friend WithEvents Button3 As Button
+    Friend WithEvents Button4 As Button
+    Friend WithEvents CheckBox1 As CheckBox
+    Friend WithEvents fcb As FancyCheckbox
 End Class
