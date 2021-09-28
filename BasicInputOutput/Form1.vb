@@ -1,9 +1,11 @@
 ﻿Public Class frmMain
+  Dim xyz As Integer
+
   Private Sub btnCheckEven_Click(sender As Object, e As EventArgs) Handles btnCheckEven.Click
     Dim n As Integer
     n = Integer.Parse(txtNumber.Text)
 
-    If N Mod 2 = 0 Then
+    If n Mod 2 = 0 Then
       MessageBox.Show("This number is even")
     Else
       MessageBox.Show("This number is odd")
