@@ -11,6 +11,10 @@ Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "ArraysAndListBox", "ArraysA
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "OOPBasics", "OOPBasics\OOPBasics.vbproj", "{F1282BE1-0CB1-489C-9FE8-5ACED9944907}"
 EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Data1", "Data1\Data1.vbproj", "{6C23CEB2-7DBC-4B91-9728-86A8F8F6E40B}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "SketchPad", "SketchPad\SketchPad.vbproj", "{136F39CD-A6A8-4FE5-ABD1-31F0C120F431}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +37,14 @@ Global
 		{F1282BE1-0CB1-489C-9FE8-5ACED9944907}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F1282BE1-0CB1-489C-9FE8-5ACED9944907}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F1282BE1-0CB1-489C-9FE8-5ACED9944907}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C23CEB2-7DBC-4B91-9728-86A8F8F6E40B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C23CEB2-7DBC-4B91-9728-86A8F8F6E40B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C23CEB2-7DBC-4B91-9728-86A8F8F6E40B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C23CEB2-7DBC-4B91-9728-86A8F8F6E40B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{136F39CD-A6A8-4FE5-ABD1-31F0C120F431}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{136F39CD-A6A8-4FE5-ABD1-31F0C120F431}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{136F39CD-A6A8-4FE5-ABD1-31F0C120F431}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{136F39CD-A6A8-4FE5-ABD1-31F0C120F431}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

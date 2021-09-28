@@ -4,13 +4,13 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{F1282BE1-0CB1-489C-9FE8-5ACED9944907}</ProjectGuid>
-    <OutputType>Exe</OutputType>
-    <StartupObject>OOPBasics.Module1</StartupObject>
-    <RootNamespace>OOPBasics</RootNamespace>
-    <AssemblyName>OOPBasics</AssemblyName>
+    <ProjectGuid>{6C23CEB2-7DBC-4B91-9728-86A8F8F6E40B}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>Data1.My.MyApplication</StartupObject>
+    <RootNamespace>Data1</RootNamespace>
+    <AssemblyName>Data1</AssemblyName>
     <FileAlignment>512</FileAlignment>
-    <MyType>Console</MyType>
+    <MyType>WindowsForms</MyType>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
@@ -22,7 +22,7 @@
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <OutputPath>bin\Debug\</OutputPath>
-    <DocumentationFile>OOPBasics.xml</DocumentationFile>
+    <DocumentationFile>Data1.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -32,7 +32,7 @@
     <DefineTrace>true</DefineTrace>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
-    <DocumentationFile>OOPBasics.xml</DocumentationFile>
+    <DocumentationFile>Data1.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup>
@@ -48,14 +48,28 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.3.0, Culture=neutral, PublicKeyToken=0e99375e54769942" />
+    <Reference Include="Google.Protobuf, Version=3.6.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604" />
+    <Reference Include="K4os.Compression.LZ4.Streams, Version=1.1.11.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d" />
+    <Reference Include="MySql.Data, Version=8.0.21.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="Renci.SshNet, Version=2016.1.0.0, Culture=neutral, PublicKeyToken=1cee9f8bde3db106" />
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.Install" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Net.Http" />
+    <Reference Include="Ubiety.Dns.Core, Version=2.2.1.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d" />
+    <Reference Include="Zstandard.Net, Version=1.1.7.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d" />
   </ItemGroup>
   <ItemGroup>
     <Import Include="Microsoft.VisualBasic" />
@@ -63,14 +77,26 @@
     <Import Include="System.Collections" />
     <Import Include="System.Collections.Generic" />
     <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
     <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
     <Import Include="System.Linq" />
     <Import Include="System.Xml.Linq" />
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Employee.vb" />
-    <Compile Include="Module1.vb" />
+    <Compile Include="frmGrid.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGrid.Designer.vb">
+      <DependentUpon>frmGrid.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainDS.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MainDS.xsd</DependentUpon>
+    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -86,9 +112,11 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="Person.vb" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="frmGrid.resx">
+      <DependentUpon>frmGrid.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
@@ -97,6 +125,17 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="MainDS.xsc">
+      <DependentUpon>MainDS.xsd</DependentUpon>
+    </None>
+    <None Include="MainDS.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MainDS.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="MainDS.xss">
+      <DependentUpon>MainDS.xsd</DependentUpon>
+    </None>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>

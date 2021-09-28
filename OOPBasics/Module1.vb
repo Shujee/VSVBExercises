@@ -1,5 +1,4 @@
 ﻿Module Module1
-
   Sub Main()
     Dim p1 As New Person
 
@@ -11,5 +10,4 @@
 
     Console.ReadLine()
   End Sub
-
 End Module
