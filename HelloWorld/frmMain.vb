@@ -1,17 +1,45 @@
-﻿
-Public Class frmMain
+﻿Public Class frmMain
+  Dim p As New Person With {.Name = "William"}
+
+  Sub New()
+
+    ' This call is required by the designer.
+    InitializeComponent()
+
+    ' Add any initialization after the InitializeComponent() call.
+    AddHandler p.Overweight, AddressOf abc
+  End Sub
+
   Private Sub btnSayHello_Click(sender As Object, e As EventArgs) Handles btnSayHello.Click
+    p.IncrementWeight()
+  End Sub
 
-    Dim d As Dog
+  Sub abc()
+    MsgBox("Person has got overweight")
+  End Sub
+End Class
 
-    Dim answer = MsgBox("Do you want to create a Great Dane? Press Yes for Great Dane. Press No for Bloodhound.", MsgBoxStyle.YesNo)
 
-    If answer = vbYes Then
-      d = New GreatDane
-    Else
-      d = New BloodHound
+Class Person
+  Public Event Overweight As Action
+
+  Private _Name As String
+  Public Property Name() As String
+    Get
+      Return _Name
+    End Get
+    Set(ByVal value As String)
+      _Name = value
+    End Set
+  End Property
+
+  Private _Weight As Integer
+
+  Public Sub IncrementWeight()
+    _Weight = _Weight + 1
+
+    If _Weight > 10 Then
+      RaiseEvent Overweight()
     End If
-
-    MsgBox(d.Run())
   End Sub
 End Class

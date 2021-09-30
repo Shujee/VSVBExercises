@@ -1,4 +1,6 @@
 ﻿Class Dog
+  Implements IComparable(Of Dog)
+
   Private _Name As String
   Public Property Name() As String
     Get
@@ -11,11 +13,18 @@
 
   Private _Height As Integer
 
-  Public ReadOnly Property Height As String
+  Public Property Height As String
     Get
       Return _Height
     End Get
+    Set(value As String)
+      _Height = value
+    End Set
   End Property
+
+  Public Shared Sub Jump()
+
+  End Sub
 
   Public Overridable Function Run()
     Return "A poor simple dog is running"
@@ -23,6 +32,10 @@
 
   Public Overrides Function ToString() As String
     Return Name & ": " & Height & " inches high"
+  End Function
+
+  Public Function CompareTo(other As Dog) As Integer Implements IComparable(Of Dog).CompareTo
+    Return Me.Height.CompareTo(other.Height)
   End Function
 End Class
 
