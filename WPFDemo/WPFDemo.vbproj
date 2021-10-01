@@ -19,4 +19,9 @@
     <Import Include="System.Windows.Shapes" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\WPFDemoModel\WPFDemoModel.vbproj" />
+    <ProjectReference Include="..\WPFDemoVM\WPFDemoVM.vbproj" />
+  </ItemGroup>
+
 </Project>

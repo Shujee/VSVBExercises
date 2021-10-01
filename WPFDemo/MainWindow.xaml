@@ -4,9 +4,69 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPFDemo"
+        xmlns:vm="clr-namespace:WPFDemoVM;assembly=WPFDemoVM"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="MainWindow" Height="450" Width="800"
+        d:DataContext="{d:DesignInstance Type=vm:MainVM}">
 
-    </Grid>
+   
+  <Grid Name="asdf">
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="2*" />
+      <ColumnDefinition Width="3*" />
+    </Grid.ColumnDefinitions>
+
+    <Grid.RowDefinitions>
+      <RowDefinition Height="40" />
+      <RowDefinition Height="3*" />
+      <RowDefinition Height="1*" />
+    </Grid.RowDefinitions>
+
+    <ToolBar Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">
+      <Button Style="{StaticResource BlueButton}" Command="{Binding GetAllBooksCommand}" Content="Load Books" />
+    </ToolBar>
+
+
+    <ListBox Grid.Row="1" Grid.Column="0" Grid.RowSpan="2" ItemsSource="{Binding Books}" SelectedItem="{Binding SelectedBook}">
+      <ListBox.ItemContainerStyle>
+        <Style TargetType="ListBoxItem">
+          <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+        </Style>
+      </ListBox.ItemContainerStyle>
+      <ListBox.ItemTemplate>
+        <DataTemplate DataType="Book">
+          <Border Background="Azure" BorderBrush="LightBlue" BorderThickness="2" Padding="6" Margin="3">
+          <Grid>
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+              </Grid.ColumnDefinitions>
+              <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+              </Grid.RowDefinitions>
+
+              <Ellipse Width="64" Height="64" Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" Margin="6">
+                <Ellipse.Fill>
+                  <ImageBrush ImageSource="{Binding author_photo}"  />
+                </Ellipse.Fill>
+              </Ellipse>
+
+              <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding Title}" FontFamily="Calibri" FontSize="14" TextWrapping="Wrap" MaxWidth="200" FontWeight="Bold" />
+              <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding author}" />
+          </Grid>
+          </Border>
+        </DataTemplate>
+      </ListBox.ItemTemplate>
+    </ListBox>
+
+    <StackPanel Grid.Column="1" Grid.Row="1">
+      <TextBox Text="{Binding SelectedBook.Title}" Margin="6" Height="30" VerticalContentAlignment="Center" />
+      <TextBox Text="{Binding SelectedBook.author}" Margin="6" Height="30" VerticalContentAlignment="Center" />
+      <TextBox Text="{Binding SelectedBook.year_written}" Margin="6" Height="30" VerticalContentAlignment="Center" />
+      <TextBox Text="{Binding SelectedBook.isbn}" Margin="6" Height="30" VerticalContentAlignment="Center" />
+      <TextBox Text="{Binding SelectedBook.edition}" Margin="6" Height="30" VerticalContentAlignment="Center" />
+      <Image Source="{Binding SelectedBook.author_photo}" Width="300" Height="Auto" />
+    </StackPanel>
+  </Grid>
 </Window>
