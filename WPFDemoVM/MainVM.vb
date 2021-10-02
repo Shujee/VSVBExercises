@@ -27,9 +27,6 @@ Public Class MainVM
 
   Public ReadOnly Property GetAllBooksCommand As GalaSoft.MvvmLight.Command.RelayCommand
     Get
-      Dim m As New MainVM
-      m.GetAllBooksCommand.Execute(Nothing)
-
       Return New GalaSoft.MvvmLight.Command.RelayCommand(Sub()
                                                            Dim agent As New WPFDemoModel.WebAgent
                                                            Dim bks = agent.GetAllBooks()

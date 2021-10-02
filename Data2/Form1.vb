@@ -4,12 +4,6 @@ Imports Data2.WorldDataset
 Public Class Form1
   Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
     Me.CountryTableAdapter.Fill(Me.WorldDataset.country)
-
-    Dim d As New DataSet
-    Dim t As New DataTable()
-    t.Columns.Add(New DataColumn("Population", GetType(Integer)))
-    t.Columns.Add(New DataColumn("Population", GetType(Integer)))
-
   End Sub
 
   Private Sub CountryBindingNavigatorSaveItem_Click_1(sender As Object, e As EventArgs) Handles CountryBindingNavigatorSaveItem.Click
